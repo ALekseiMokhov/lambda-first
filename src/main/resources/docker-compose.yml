@@ -1,0 +1,13 @@
+version: "3.3"
+services:
+  db:
+    image: postgres
+    restart: unless-stopped
+    environment:
+          - POSTGRES_USER=lambda
+          - POSTGRES_PASSWORD=lambda
+          - POSTGRES_DB=lambda
+    volumes:
+      - ./var/pgdata:/var/lib/postgresql/data
+    ports:
+      - "5436:5432"
